@@ -7,12 +7,11 @@ import android.view.View;
 
 import com.jayway.android.robotium.solo.Solo;
 
-public abstract class ASimpleJobTest extends AUiDriver<MainActivity>
+public abstract class AbstractSimpleJobTest extends AbstractUiDriver<MainActivity>
 {
-    // TODO: reduce this delay when we can turn off the animations
     protected static final int BID_ANIMATION_TIMEOUT = 3000;
 
-    public ASimpleJobTest()
+    public AbstractSimpleJobTest()
     {
         super(MainActivity.class);
     }
@@ -26,7 +25,7 @@ public abstract class ASimpleJobTest extends AUiDriver<MainActivity>
     }
 
     /**
-     * Standard test to verify a particular job is currenly on screen
+     * Standard test to verify a particular job is currently on screen
      */
     protected void verifyJobIsDisplayed(final Job job)
     {
@@ -54,12 +53,6 @@ public abstract class ASimpleJobTest extends AUiDriver<MainActivity>
         assertNotNull(bar);
         assertEquals(View.VISIBLE, bar.getVisibility());
         assertTrue(solo.searchText("Pending bids")); //$NON-NLS-1$
-    }
-
-    protected void winBid()
-    {
-        // trigger win code goes here
-        assertTrue(this.getSolo().waitForText("won", 1, UI_WAIT_DELAY)); //$NON-NLS-1$
     }
 
 }
