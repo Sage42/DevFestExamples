@@ -35,7 +35,6 @@ public abstract class ABaseContentProvider extends ContentProvider
         return false;
     }
 
-    @SuppressWarnings("resource")
     @Override
     public Cursor query(final Uri uri, final String[] projection, final String selection, final String[] selectionArgs,
                     final String sortOrder)

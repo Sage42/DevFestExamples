@@ -1,7 +1,10 @@
 package org.sage42.devfest.c.test;
 
-import org.hamcrest.CoreMatchers;
-import org.junit.Assert;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.CoreMatchers.nullValue;
+import static org.junit.Assert.assertThat;
+
 import org.junit.Test;
 import org.sage42.devfest.c.main.CombinedData;
 import org.sage42.devfest.c.main.Event;
@@ -99,21 +102,21 @@ public class GsonParsingTest
     {
         // parse all
         final CombinedData data = new Gson().fromJson(GsonParsingTest.JSON, CombinedData.class);
-        Assert.assertThat(data, CoreMatchers.not(CoreMatchers.nullValue()));
+        assertThat(data, not(nullValue()));
 
         // check resultant events list
         final Event[] events = data.getEvents();
-        Assert.assertThat(events, CoreMatchers.not(CoreMatchers.nullValue()));
-        Assert.assertThat(events.length, CoreMatchers.is(10));
+        assertThat(events, not(nullValue()));
+        assertThat(events.length, is(10));
 
         final Event event = events[0];
-        Assert.assertThat(
+        assertThat(
                         event.getText(),
-                        CoreMatchers.is("Interdumdonec ipsum ut inceptos varius tempus sempermorbi, clita esse ipsuminteger fusce sem consetetur montes nisi. Quis primis dictumstvivamus semper nullamauris magnainteger. Ipsuminteger lobortisetiam, mi labore at et dictumst. Conubia elitduis ad blandit nullasuspendisse. Kasd sadipscing pretium id tortorvestibulum, platea in parturient morbi luctus sodalessed urnamorbi. Proin fringilla. Odio class."));
-        Assert.assertThat(event.getTitle(), CoreMatchers.is("Deirdre Zaira Liza Ross"));
-        Assert.assertThat(event.getImage(), CoreMatchers.is(CoreMatchers.nullValue()));
-        Assert.assertThat(event.getLink(), CoreMatchers.is("http://domain.com/darrel/megan/angelica/craig"));
-        Assert.assertThat(event.getResourceUri(), CoreMatchers.is("/api/v1/event/1/"));
+                        is("Interdumdonec ipsum ut inceptos varius tempus sempermorbi, clita esse ipsuminteger fusce sem consetetur montes nisi. Quis primis dictumstvivamus semper nullamauris magnainteger. Ipsuminteger lobortisetiam, mi labore at et dictumst. Conubia elitduis ad blandit nullasuspendisse. Kasd sadipscing pretium id tortorvestibulum, platea in parturient morbi luctus sodalessed urnamorbi. Proin fringilla. Odio class."));
+        assertThat(event.getTitle(), is("Deirdre Zaira Liza Ross"));
+        assertThat(event.getImage(), is(nullValue()));
+        assertThat(event.getLink(), is("http://domain.com/darrel/megan/angelica/craig"));
+        assertThat(event.getResourceUri(), is("/api/v1/event/1/"));
     }
 
 }
