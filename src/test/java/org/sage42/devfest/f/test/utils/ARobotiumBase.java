@@ -1,4 +1,4 @@
-package org.sage42.devfest.e.test.utils;
+package org.sage42.devfest.f.test.utils;
 
 import android.app.Activity;
 import android.content.Context;

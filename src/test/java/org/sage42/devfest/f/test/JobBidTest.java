@@ -1,4 +1,4 @@
-package org.sage42.devfest.e.test;
+package org.sage42.devfest.f.test;
 
 import com.jayway.android.robotium.solo.Solo;
 

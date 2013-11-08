@@ -1,7 +1,7 @@
-package org.sage42.devfest.e.test;
+package org.sage42.devfest.f.test;
 
-import org.sage42.devfest.e.main.Job;
-import org.sage42.devfest.e.main.MainActivity;
+import org.sage42.devfest.f.main.Job;
+import org.sage42.devfest.f.main.MainActivity;
 
 import android.view.View;
 
@@ -34,10 +34,6 @@ public abstract class AbstractSimpleJobTest extends AbstractUiDriver<MainActivit
         // check for address display
         assertTrue(solo.searchText(job.pickUp, true));
         assertTrue(solo.searchText(job.dropOff, true));
-
-        // check for price display
-        assertTrue(solo.searchText("RM" + Double.valueOf(job.fareLower).intValue(), true)); //$NON-NLS-1$
-        assertTrue(solo.searchText(" - " + Double.valueOf(job.fareUpper).intValue(), true)); //$NON-NLS-1$
     }
 
     protected void bidForJob()

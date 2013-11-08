@@ -1,4 +1,4 @@
-package org.sage42.devfest.e.main;
+package org.sage42.devfest.f.main;
 
 import android.app.Activity;
 

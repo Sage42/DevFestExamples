@@ -1,10 +1,8 @@
-package org.sage42.devfest.e.test;
+package org.sage42.devfest.f.test;
 
-import java.util.Calendar;
-
-import org.sage42.devfest.e.main.Job;
-import org.sage42.devfest.e.test.utils.ARobotiumBase;
-import org.sage42.devfest.e.test.utils.TestJobBuilder;
+import org.sage42.devfest.f.main.Job;
+import org.sage42.devfest.f.test.utils.ARobotiumBase;
+import org.sage42.devfest.f.test.utils.TestJobBuilder;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -40,7 +38,6 @@ public abstract class AbstractUiDriver<ActivityUnderTest extends Activity> exten
     protected Job addJob(final long bookingId)
     {
         final Job newJob = TestJobBuilder.buildJob();
-        newJob.surfaceTime = Calendar.getInstance().getTimeInMillis();
         newJob.bookingId = bookingId;
 
         // insert a job ad
